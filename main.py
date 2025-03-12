@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import scrolledtext
+from PIL import Image, ImageTk
 
 
 def main():
@@ -14,10 +15,22 @@ def main():
     # Window configuration
     window = Tk()
     window.title("To-do App")
-    window.geometry("500x500")
+    window.geometry("500x600")
     window.configure(bg=background_color)
 
     # App layout
+    
+    # Image header
+    try:
+        image = Image.open("to-do-header.png")
+        image_resized = image.resize((150, 90))
+        image_tk = ImageTk.PhotoImage(image_resized)
+        
+        label_image = Label(window, image=image_tk)
+        label_image.image = image_tk
+        label_image.pack()
+    except FileNotFoundError:
+        print("Error: image not found")
 
     # Tasks Entry
     task = Entry(
