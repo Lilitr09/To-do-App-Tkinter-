@@ -8,15 +8,21 @@ def main():
     definition"""
     background_color = "#F5F5F5"  # Light grey
     text_color = "#212121"  # Dark grey
-    primary_color = "#4CAF50"  # Green
-    secondary_color = "#8BC34A"  # Light green
+    primary_color = "#3498DB"  # Green
+    secondary_color = "#2980B9"  # Light green
     highlight_color = "#FFEB3B"  # Yellow
+    red_button = "#E74C3C"
+    red_button_hover = "#C0392B"
 
     # Window configuration
     window = Tk()
     window.title("To-do App")
     window.geometry("500x600")
     window.configure(bg=background_color)
+    window.resizable(0, 0)
+    
+    icon = PhotoImage(file="to-do-icon.png")
+    window.iconphoto(False, icon)
 
     # App layout
     
@@ -41,13 +47,14 @@ def main():
     add_task_button = Button(
         window,
         text="Add Task",
-        bg=secondary_color,
-        fg=text_color,
+        bg=primary_color,
+        fg="white",
         padx=5,
         pady=5,
         cursor="hand2",
-        activebackground=primary_color,
+        activebackground=secondary_color,
         activeforeground="white",
+        font=("calibre", 10, "bold")
     )
     add_task_button.pack()
     # Tasks area
@@ -57,13 +64,14 @@ def main():
     delete_task_button = Button(
         window,
         text="Delete task",
-        bg=secondary_color,
-        fg=text_color,
+        bg=red_button,
+        fg="white",
         padx=5,
         pady=5,
         cursor="hand2",
-        activebackground=primary_color,
+        activebackground=red_button_hover,
         activeforeground="white",
+        font=("calibre", 10, "bold")
     )
     delete_task_button.pack()
     
