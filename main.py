@@ -63,7 +63,7 @@ def main():
     window.configure(bg=background_color)
     window.resizable(0, 0)
 
-    icon = PhotoImage(file="to-do-icon.png")
+    icon = PhotoImage(file="icon.png")
     window.iconphoto(False, icon)
 
     # App layout
